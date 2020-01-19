@@ -8,6 +8,8 @@ const geocode = require('./utils/geocode')
 
 //Configure express server
 const app = express()
+const port = process.env.PORT || 3000
+
 
 //Path to folder 
 const publicDirPath = path.join(__dirname, '../public')  //used to join paths
@@ -89,7 +91,7 @@ app.get('*', (req, res) => {
 }) 
 
 
-app.listen(3000, () => console.log('Server running at port 3000')) //starts the server at port 3000. Optional callback
+app.listen(port, () => console.log('Server running at port '+ port)) //starts the server at port 3000. Optional callback
 
 //handle request to a specific url (serve a route)
 //@params for get(): route(url user requested. Empy is for Home/Root), function(request, response)
